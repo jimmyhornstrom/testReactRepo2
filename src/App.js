@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Message from './Components/Message';
+import Product from './Components/Product';
+import FruitList from './Components/FruitList';
+import AdressList from './Components/AdressList';
+import NewsList from './Components/NewsList';
+import EventComponent from './Components/EventComponent';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+  let fruits = ["Banan","Äpple","Apelsin", "Päron", "Hej", "Hopp", "test"];
+  let people = [{name: "lisa", email:"lisa@gmail.com", phone:"0702313213"},
+  {name: "kalle", email:"kalle@nackademin.se", phone:"07032132132"}];
+  
+  let news = [{title: "Ny version av React", text:"Det har kommit en uppdatering av React..."},
+              {title: "Ny lag om tv-licens", text:"Nu dras licensen direkt ....."}];
+
+  return (<>
+  <Message msg="Kuk" date="2019-03-18" />
+  <Message msg="Bög" />
+  <Message msg="Fitta" />
+  <Product>Penis</Product>
+  <FruitList arr={fruits} />
+  <AdressList array={people}/>
+  <NewsList news = {news}/>
+  <EventComponent />
+    
+  </>
   );
 }
 
